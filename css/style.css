@@ -1,0 +1,155 @@
+@font-face {
+    font-family: 'LetterMagic';
+    src: url('/fonts/LetterMagic.ttf');
+}
+
+@font-face {
+    font-family: 'sanva';
+    src: url('/fonts/sanva\ font.ttf')
+}
+body {
+    background-color: #f7ecdd;
+}
+h1 {
+    font-family: 'LetterMagic';
+    font-size: 4.5em;
+    color: #511f6d;
+    text-shadow: 1px 1px 0px black;
+    text-align: left;
+    width: 60%;
+    margin-left: 20%;
+    margin-top: 40px;
+}
+h2 {
+    font-family: 'sanva';
+    margin-top: -10px;
+    margin-left: 20%;
+    color:#511f6d;
+    text-align: left;
+    text-shadow: 0px 0px 1.3px #FFD099;
+    font-size: 130%;
+}
+
+h3 {
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-bottom: 1rem;
+    margin-top: 3%;
+    font-family: 'sanva';
+    font-weight: bolder;
+    font-size: 20px;
+    text-shadow: 0px 0px 1.5px black;
+    border: 1px;
+    color:rgb(67, 21, 90);
+
+}
+
+h4 {
+    font-family: 'sanva';
+    text-shadow: 1px 1px 1px rgba(255, 226, 241, 1);
+    margin-left: 20%;
+    margin-right: 20%;
+    font-size: 1em;
+}
+
+.me-pic {
+    display: inline-block;
+    width: 15%;
+    height: auto;
+    margin-left: 20%;
+}
+p {
+    margin-left: 20%;
+    margin-right: 20%;
+    font-family: 'sanva';
+    color: #1f063f;
+    
+}
+.HeadingLine {
+    height: 3px;
+    background: linear-gradient(90deg, #6d88b9, #342885, #6d88b9);
+    border: 0; 
+    border-radius: 2px;
+    width: 60%;
+    margin: auto;
+}
+
+.carousel {
+    width: 60% !important;
+    height:60%;
+    margin-left: 20%;
+}
+
+.navigation-bar {
+ padding: 0;
+ margin-top: 1rem;
+ margin-bottom: 1rem;
+ justify-content: center;
+ font-family: 'sanva';
+ font-size: 1em; 
+ letter-spacing: 2px;
+ --bs-link-color: rgb(119, 71, 175);
+ --bs-nav-link-hover-color: #502563;
+--bs-nav-link-active-color: #b972cd;
+
+}
+
+.dropdown-menu {
+    --bs-dropdown-link-active-bg:#b972cd;
+}
+label {
+    font-family: sanva;
+}
+.contact-form {
+    width: 60%;
+    margin-left: 20%;
+    margin-bottom: 3%;
+    font-family: sanva;
+    color: rgb(67, 21, 90);
+}
+
+.form-names {
+    margin-bottom: 2%;
+}
+
+.submit-button {
+    justify-content: center;
+    --bs-btn-border-color: #796185;
+    color: #796185;
+    --bs-btn-hover-bg: #845799;
+    --bs-btn-hover-border-color:#845799;
+    --bs-btn-active-bg: #9870aa;
+    --bs-btn-active-border-color:#845799;
+    --bs-btn-padding-x: 5%;
+}
+
+li {
+    display: inline-block;
+    padding-left: 0;
+}
+
+
+
+.githublogo {
+    width: 6%;
+    height: auto;
+    margin-left: 40%;
+}
+
+.instalogo {
+    width: 6%;
+    height: auto;
+    text-align: center;
+}
+
+.twitterlogo {
+    width: 7%;
+    height: auto;
+    margin-bottom: -6px;
+    text-align: center;
+}
+
+.copyright {
+    font-size: 12px;
+    text-align: center;
+}
