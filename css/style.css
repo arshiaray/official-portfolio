@@ -63,8 +63,6 @@ p {
     background: linear-gradient(90deg, #6d88b9, #342885, #6d88b9);
     border: 0; 
     border-radius: 2px;
-    width: 60%;
-    margin: auto;
 }
 
 .carousel {
