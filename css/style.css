@@ -110,6 +110,7 @@ label {
     --bs-btn-active-bg: #9870aa;
     --bs-btn-active-border-color:#845799;
     --bs-btn-padding-x: 5%;
+    font-family: sanva;
 }
 
 li {
