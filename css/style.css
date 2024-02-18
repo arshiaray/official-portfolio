@@ -101,7 +101,7 @@ label {
     margin-bottom: 2%;
 }
 
-.submit-button {
+.submit-button, .blog-button {
     justify-content: center;
     --bs-btn-border-color: #796185;
     color: #796185;
