@@ -154,3 +154,7 @@ h5 {
     color:rgb(67, 21, 90);
     text-shadow: 0px 0px 1.5px black;
 }
+
+h6 {
+    color: #8a8584;
+}
