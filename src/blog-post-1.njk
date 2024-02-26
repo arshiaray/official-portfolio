@@ -4,4 +4,16 @@ layout: default.njk
 <h2>JavaScript Foundations</h2>
 <h6> 6th January 2024 by <a href="/about-me">Arshia</a> </h6>
 
-<p>Dipping my toes into JavaScript got me really excited. </p>
+<p>This was the first time I encountered Javascript and I was immediately excited by it. I learned about the basics of Javascript including; the different types of variables (var, const, let), operators and their meanings, the different ways to print a message (console.log, document.write, alert,), data types, concatenation, template literals. I lastly was able to write my first javascript program! </p>
+
+<pre>
+    <code>
+        let preTipTotal = prompt("What is your pre-tip total?");
+        let tipPercentage = prompt("What is the tip percentage?");
+
+        var tipAmount = preTipTotal*(tipPercentage/100);
+        var actualTotal = +preTipTotal + tipAmount;
+
+        console.log("Your total bill, with tip £" + tipAmount.toFixed(2) + ", is £" + actualTotal.toFixed(2));
+    </code>
+</pre>
