@@ -4,3 +4,68 @@ layout: default.njk
 
 <h2>Pseudocode and Comments</h2>
 <h6> 22nd January 2024 by <a href="/about-me">Arshia</a>  </h6>
+
+<p>Pseudocode is undeniably one of the most useful tools you can come across as a coder. For lengthier and more complex
+    codes, it makes the writing process much smoother once you write the code in plain english. It takes the syntax and 
+    extra things you may need to think about when writing code and lets you focus on the logic of it. From that point you
+    can use the pseudocode as a foundation to translate it into real code.
+</p>
+
+<p>Here is a piece of existing code I added comments to as a practice exercise:</p>
+
+<pre>
+    <code>
+        //Task 1: Add comments to previous JS task
+function drinkOrder(size, drink) { //Function that takes in the order of size and drink name 
+  let drinkName = " "; //declare drinkName as empty variable to it can be altered later on
+  
+  switch(drink.toLowerCase()) { //change all characters of drink input to lower case
+    case 'cola': // if statement for cola button
+      drinkName = "Cola" // outputs order as Cola
+      break; //ends switch statement
+    case 'lemon': //if statement for lemonade button
+      drinkName = "Lemonade" // Outputs order as Lemonade
+      break; //ends switch statement
+    default:
+      drinkName = "Orangeade" // if last two button aren't chosen, automatically outputs Orangeade
+  }
+  
+  return("You have ordered a " +size+" drink of " + drinkName); // returns the order statement to the function
+}
+
+console.log(drinkOrder("Large","cola")); // prints the order statement
+    </code>
+</pre>
+
+<p>Here is a block of pseudocode I wrote for a reading list program:</p>
+
+<pre>
+    <code>
+        /*
+        Create an array called readingList
+        Store title of Book 1
+        Store author of Book 1
+        store boolean of Book 1's reading status in alreadyRead variable,
+
+        Store title of Book 2
+        Store author of Book 2
+        store boolean of Book 2's reading status in alreadyRead variable,
+  
+        Store title of Book 2
+        Store author of Book 2
+        store boolean of Book 2's reading status in alreadyRead variable
+  
+
+        for loop until the length of readingList array 
+        PRINT readingList's title 'by' readingList's author
+
+
+        FOR LOOP until the length of readingList array 
+        IF the book has already been read then
+            PRINT "You've already read" readingList's title "by" readingList's author
+            ELSE 
+            PRINT "You still need to read" readingList's title "by" readingList's author
+
+        */
+    </code>
+</pre>
