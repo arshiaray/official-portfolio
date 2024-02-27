@@ -3,3 +3,31 @@ layout: default.njk
 ---
 <h2>Functions and Control Flow</h2>
 <h6>11th January 2024 by <a href="/about-me">Arshia</a>  </h6>
+
+<p>Discovering and understanding how functions and IF statements work was so interesting. I learned that writing functions
+    is really essential as a programmer as it saves a lot of time rewriting a set piece of code by being able to call it
+    using a simple variable name whenever it's needed. I can really see it being a super useful tool as a coder. Control Flow
+    is also a really neat tool to output certain results depending on different sets of conditions. I used both of these tools
+    to write my own code that asks the user the temperature and tells them what clothing would be suitable to wear.
+</p>
+
+<p>Here is the program:</p>
+
+<pre>
+    <code>
+        var temperature = +prompt("What is the temperature?");
+
+        function tempGuide(temperature) {
+        if (temperature < 0) {
+            return("Just stay inside");} 
+        else if (temperature < 30) {
+            return("Put your coat and hat on!"); }
+        else if (temperature < 50){
+          return("Put your coat on!"); }
+        else {
+            return("Just pants and vest is all good.");
+        }
+        }
+        console.log(tempGuide(temperature));
+    </code>
+</pre>
