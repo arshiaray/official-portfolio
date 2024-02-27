@@ -31,3 +31,71 @@ layout: default.njk
         console.log(tempGuide(temperature));
     </code>
 </pre>
+
+<p>The next lesson we progressed onto writing more complex codes with our knowledge of functions and control flow.</p>
+
+<p>Here is a percentage calculator program I wrote that returns a specific percentage of any numer:</p>
+
+<pre>
+    <code>
+        function percentagecalculator(number, percentage) {
+            return((percentage/100) * number)
+           }
+          
+          console.log(percentagecalculator())
+    </code>
+</pre>
+
+<p> This is a program that outputs the user's drink order depending on their selection: </p>
+
+<pre>
+    <code>
+        function drinkOrder(size, drink) {
+            let drinkName = " ";
+            
+            switch(drink.toLowerCase()) {
+              case 'cola':
+                drinkName = "Cola"
+                break;
+              case 'lemon':
+                drinkName = "Lemonade"
+                break;
+              default:
+                drinkName = "Orangeade"
+            }
+            
+            return("You have ordered a " +size+" drink of " + drinkName);
+          }
+          
+          console.log(drinkOrder("Large","cola"));
+    </code>
+</pre>
+
+<p>This program is a calculator and can do plus, minus, muliplication, and division sums:</p>
+
+<pre>
+    <code>
+        function calculator(num1, num2, operator) {
+            let answer = " ";
+            
+            switch(operator) {
+              case '+':
+                answer = num1 + num2
+                break;
+              case '-':
+                answer = num1 - num2
+                break;
+              case '*':
+                answer = num1 * num2
+                break;
+              case '/':
+                answer = num1 / num2
+                break;   
+            }
+            
+            return(num1 + " " + operator + " " + num2 + " = " + answer);
+          }
+          
+          console.log(calculator(12,5,"/"));
+    </code>
+</pre>
