@@ -4,3 +4,185 @@ layout: default.njk
 
 <h2>Loops, Arrays, and Objects</h2>
 <h6> 29th January 2024 by <a href="/about-me">Arshia</a>  </h6>
+
+<p>Learning about loops, arrays, and objects was so fun. Learning to use them to write various different codes helped
+    me understanding how these tools can be used in real world coding scenarios. There are two different types of loops;
+    a while loop which keeps looping until the the argument runs false, and for loops which runs for a set number of times
+    decided by the developer. Arrays are objects which can store lists. Objects hold a collection of properties which are
+    connected by a key and a variable. Here is a selection of code that I wrote using these skills:
+</p>
+
+<p>A loop that writes the 7 times table:</p>
+
+<pre>
+    <code>
+        for (var i = 1; i <= 12; i++) {
+            console.log(`${i} x ${7} = ${i * 7}`);
+        }
+    </code>
+</pre>
+
+<p>An array of my favourite foods:</p>
+
+<pre>
+    <code>
+        const faveFoods = ["sushi", "korean fried chicken", "chicken biryani", "carbonara", "cilbir"];
+
+        for (const food of faveFoods) {
+            console.log(food);
+
+        }
+    </code>
+</pre>
+
+<p>An object to hold my favourite recipe and a function, a loop that lists all the ingredients and directions, and
+    a fun function that praises this recipe:
+</p>
+
+<pre>
+    <code>
+        const faveRecipe = {
+            title: 'Gochujang Tofu Ramen',
+            servings: 2,
+            ingredients: ['veggie broth', 'gochujang', 'tofu', 'sesame oil', 'mushrooms', 'tahini', 'honey', 'miso', 'spring onions', 'noodles'],
+            directions: [' 1. Make a base with gochujang, honey, tahini, and sesame oil',
+                        ' 2. Chop the tofu into chunks and fry until crispy',
+                        ' 3. Fry garlic and ginger in sesame oil',
+                        ' 4. Add veggie broth and mushrooms and simmer',
+                        ' 5. add all the componenets into the bowl and enjoy!'],
+            letsCook() {
+                console.log(`I'm hungry! Lets cook ${faveRecipe.title}! :P`);
+            },
+                
+        
+        };
+        
+        console.log(faveRecipe);
+        
+    </code>
+</pre>
+
+
+<p>Here I wrote a simple shopping cart program that outputs the total price:</p>
+
+<pre>
+    <code>
+        let shoppingCart = [
+    { name: "loaf of bread", type: "food", quantity: 1, price: 0.85 },
+    { name: "multipack beans", type: "food", quantity: 1, price: 1 },
+    { name: "mushrooms", type: "food", quantity: 10, price: 0.1 },
+    { name: "can of beer", type: "alcohol", quantity: 4, price: 1.1 },
+    { name: "prosecco", type: "alcohol", quantity: 1, price: 8.99 },
+    { name: "steak", type: "food", quantity: 2, price: 3.99 },
+    { name: "blue cheese", type: "food", quantity: 1, price: 2.99 },
+    { name: "candles", type: "home", quantity: 3, price: 1.99 },
+    { name: "cheesecake", type: "food", quantity: 1, price: 4.99 },
+    { name: "onions", type: "food", quantity: 3, price: 0.4 }
+];
+
+        //PART 1
+        function getTotal(basket) {
+            let totalPrice = 0;
+
+            for (const item of basket) {
+                let itemSubtotal = item.price * item.quantity;
+                totalPrice += itemSubtotal;
+            }
+            return totalPrice.toFixed(2);
+        }
+        console.log('£' + getTotal(shoppingCart));
+    </coode>
+</pre>
+
+<p>I edited the loops so any item that is a food gets a 20% discout:</p>
+
+<pre>
+    <code>
+        function getTotal(basket) {
+            let totalPrice = 0;
+            for (const item of basket) {
+                let itemSubtotal = (item.price * item.quantity);
+              
+                if (item.type === "food") {
+                    itemSubtotal = itemSubtotal *0.8;
+                } 
+              totalPrice += itemSubtotal;
+                }
+             return totalPrice.toFixed(2);
+            }
+        
+        console.log('£' + getTotal(shoppingCart));
+    </code>
+</pre>
+
+<p>I edited the function so the user can input the discout amount and for what type of item it is applied to:</p>
+
+<pre>
+    <code>
+        function getTotal(basket, discountAmount, type) {
+            let totalPrice = 0;
+            for (const item of basket) {
+                let itemSubtotal = item.price * item.quantity;
+        
+                if (type === "any") {
+                    itemSubtotal = itemSubtotal * ((100 - discountAmount)/100);
+                } else if (item.type === type) {
+                    itemSubtotal = itemSubtotal * ((100 - discountAmount)/100);
+                }
+              totalPrice += itemSubtotal;
+            }
+            return totalPrice.toFixed(2);
+        }
+        console.log('£' + getTotal(shoppingCart, 30, "food"));
+    </code>
+</pre>
+
+<p>Here I wrote a function that lets the user input a price range and the function outputs all the items 
+    that fall between that range:
+</p>
+
+<pre>
+    <code>
+        function cartCalculator(cart, lowPrice, highPrice) {
+            let arrItems = [];
+        
+            for (const item of cart) {
+                if (item.price >= lowPrice && item.price <= highPrice) {
+                    arrItems.push(item.name)
+                }
+            }
+            return arrItems;
+        }
+        console.log(cartCalculator(shoppingCart, 0.2, 2));        
+    </code>
+</pre>
+
+<p>I added an additional argument to my function called 'quantity', if this is true then the program accounts the 
+    quantity of the item with it's price to see if it falls in the price range:
+</p>
+
+<pre>
+    <code>
+        function cartCalculator(cart, lowPrice, highPrice, quantity) {
+            let arrItems = [];
+            let totalPrice = 0;
+        
+            for (const item of cart) {
+        
+                if (quantity == false) {
+                        if (item.price >= lowPrice && item.price <= highPrice) {
+                            arrItems.push(item.name)
+                        }
+        
+                }  else if (quantity == true) {
+                    totalPrice = item.quantity * item.price;
+                        if (totalPrice >= lowPrice && totalPrice <= highPrice) {
+                            arrItems.push(item.name);
+                        }
+                }
+            }
+            return arrItems
+        };
+         console.log(cartCalculator(shoppingCart, 1.5, 10, false));
+    </code>
+</pre>
