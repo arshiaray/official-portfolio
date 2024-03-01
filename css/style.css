@@ -165,3 +165,8 @@ pre {
   padding: 20px;
   background-color:#d6aeea;
 }
+
+code {
+    color: black;
+    font-size: 12px;
+}
