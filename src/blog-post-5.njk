@@ -4,3 +4,110 @@ layout: default.njk
 
 <h2>The DOM</h2>
 <h6> 13th February 2024 by <a href="/about-me">Arshia</a>  </h6>
+
+<p>This was probably the most exciting part of the journey, joining both HTML and javascript together to create interactive
+    webpages. 
+</p>
+
+<div class="code-blocks">
+<pre>
+    <code>
+        <div class="container">
+            <h1>Todo</h1>
+            
+            <form id="todo">
+              <label for="title">Title</label>
+              <input type="text" name="title" id="title" required>
+              <label for="priority">Priority</label>
+              <select name="priority" id="priority">
+                <option value="low">Low</option>
+                <option value="medium" selected>Medium</option>
+                <option value="high">High</option>
+              </select>
+              <button>Add</button>
+            </form>
+          
+            <!-- This is an empty container for use by javascript. -->
+            <ul id="todo-pane"></ul>
+            
+            <footer>
+              <small>
+                Flag images used with thanks from <a href="https://www.iconfinder.com/iconsets/prettyoffice8">https://www.iconfinder.com/iconsets/prettyoffice8</a>.
+              </small>
+            </footer>
+          </div>          
+    </code>
+</pre>
+<pre>
+    <code>
+        // Store the URL of an image for each priority level.
+        const priorityImages = {
+        low: 'https://cdn1.iconfinder.com/data/icons/prettyoffice8/256/Flag-green.png',
+        medium: 'https://cdn1.iconfinder.com/data/icons/prettyoffice8/256/Flag-yellow.png',
+         high: 'https://cdn1.iconfinder.com/data/icons/prettyoffice8/256/Flag-red.png',
+        };
+
+        // Get the form by ID from the forms collection.
+        const form = document.querySelector('form');
+        // Get the todo pane (the 'ul' element) to insert todos into.
+        const todoPane = document.getElementById('todo-pane');
+        // Get the text input for the title. We'll read from this when creating the todo.
+        const titleInput = form.elements.title;
+        // Get the priority select element. We'll read from this when creating the todo.
+        const prioritySelect = form.elements.priority;
+        // Get a *live* list of all elements with the 'todo' class.
+        const allTodos = document.getElementsByClassName('todo');
+
+        // Add an event listener that will
+        // 1. Create a new todo. The details should come from the form.
+        // 2. Insert it into the DOM.
+        // 3. Clear the title input ready to create a new todo note.
+        // 4. Prevent the default behaviour (ie don't submit to a server).
+
+        form.addEventListener('submit', (event) => {
+        for (const todo of allTodos) {
+            todo.classList.remove('just-created');
+        };
+  
+        const newTodo = createTodo(titleInput.value, prioritySelect.value);
+        todoPane.appendChild(newTodo);
+        form.reset()
+  
+        event.preventDefault();
+        });
+
+
+        function createTodo(title, priority) {
+        // Create the text node with the variable 'title'.
+        const textNode = document.createTextNode(title);
+        const textDiv = document.createElement('div');
+        textDiv.appendChild(textNode);
+        // Create a new list item element to contain the text node.
+        const todo = document.createElement('li');
+        const image = document.createElement('img');
+        image.src = priorityImages[priority];
+        // Add the text node to the list item element.
+        todo.appendChild(textDiv);
+        todo.appendChild(image);
+        todo.setAttribute('title', 'Delete');
+  
+
+        // The most recently created list item (only!) should have the 'just-created' class.
+        todo.classList.add('todo', 'just-created');
+
+
+        // Optional extras:
+        // 1. Add an image for the priority. The URLs are stored in the priorityImages object.
+        // 1. Add a click handler to the note that deletes it on click using Element.remove().
+        todo.addEventListener('click', function (event) {
+       event.currentTarget.remove();
+        });
+  
+        // Return the new element.
+        return todo;
+  
+        }
+    </code>
+</pre>
+
+</div>
