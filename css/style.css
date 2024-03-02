@@ -176,3 +176,7 @@ code {
     align-items: center;
     justify-content: center;
 }
+
+.about-me-text {
+    padding-left: 4%;
+}
