@@ -170,3 +170,9 @@ code {
     color: black;
     font-size: 12px;
 }
+
+.about-me {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
