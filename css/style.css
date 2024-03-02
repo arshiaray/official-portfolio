@@ -187,3 +187,7 @@ code {
     justify-content: center;
     align-items: center;
 }
+
+.image-container {
+    padding: 3%
+}
