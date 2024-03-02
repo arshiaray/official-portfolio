@@ -180,3 +180,10 @@ code {
 .about-me-text {
     padding-left: 20%;
 }
+
+.python-video {
+    display: flex;
+    padding: 1rem; 
+    justify-content: center;
+    align-items: center;
+}
