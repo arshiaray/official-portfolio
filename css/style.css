@@ -173,7 +173,7 @@ code {
 
 .about-me {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
 }
 
